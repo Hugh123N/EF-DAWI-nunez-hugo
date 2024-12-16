@@ -14,7 +14,7 @@ public interface CarService {
 
     Optional<CarDetailDto> findDetailCar(Integer id) throws Exception;
 
-    boolean updateCar(Car car) throws Exception;
+    boolean updateCar(CarCreateDto car) throws Exception;
 
     boolean createCar(CarCreateDto car) throws Exception;
 

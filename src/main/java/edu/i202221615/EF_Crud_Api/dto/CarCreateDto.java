@@ -3,6 +3,7 @@ package edu.i202221615.EF_Crud_Api.dto;
 import java.util.Date;
 
 public record CarCreateDto(
+        Integer carId,
          String make,
          String model,
          int year,

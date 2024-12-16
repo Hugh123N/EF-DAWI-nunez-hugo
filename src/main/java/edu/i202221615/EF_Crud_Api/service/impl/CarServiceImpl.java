@@ -55,8 +55,23 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public boolean updateCar(Car car) throws Exception {
-        return false;
+    public boolean updateCar(CarCreateDto car) throws Exception {
+        Optional<Car> optional = carRepository.findById(car.carId());
+        return optional.map(ca -> {
+            ca.setMake(car.make());
+            ca.setModel(car.model());
+            ca.setModel(car.model());
+            ca.setYear(car.year());
+            ca.setVin(car.vin());
+            ca.setLicensePlate(car.licensePlate());
+            ca.setOwnerName(car.ownerName());
+            ca.setOwnerContact(car.ownerContact());
+            ca.setMileage(car.mileage());
+            ca.setEngineType(car.engineType());
+            ca.setColor(car.color());
+            ca.setInsuranceCompany(car.insuranceCompany());
+            return true;
+        }).orElse(false);
     }
 
     @Override
